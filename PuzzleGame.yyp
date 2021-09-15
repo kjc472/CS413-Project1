@@ -15,7 +15,7 @@
     {"id":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},"order":2,},
     {"id":{"name":"spr_arrow_right","path":"sprites/spr_arrow_right/spr_arrow_right.yy",},"order":4,},
     {"id":{"name":"obj_floor_u","path":"objects/obj_floor_u/obj_floor_u.yy",},"order":14,},
-    {"id":{"name":"obj_arrow","path":"objects/obj_arrow/obj_arrow.yy",},"order":5,},
+    {"id":{"name":"obj_arrow_right","path":"objects/obj_arrow_right/obj_arrow_right.yy",},"order":5,},
     {"id":{"name":"spr_floor_empty","path":"sprites/spr_floor_empty/spr_floor_empty.yy",},"order":13,},
     {"id":{"name":"obj_arrow_down","path":"objects/obj_arrow_down/obj_arrow_down.yy",},"order":6,},
     {"id":{"name":"obj_floor_dl","path":"objects/obj_floor_dl/obj_floor_dl.yy",},"order":10,},
@@ -46,8 +46,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
     {"roomId":{"name":"rm_puzzle","path":"rooms/rm_puzzle/rm_puzzle.yy",},},
+    {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
     {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
   ],
   "Folders": [
