@@ -48,17 +48,60 @@ function moveUp()
 
 }
 
-function isSolved()
+function isSolved(node)
 {
+	global.solvedRooms+=1;
 	var col;
 	var row;
 	var colSize = 3;
 	var rowSize = 3;
-	for(col=0;col<colSize;col+=1)
+	
+	var leftDoor = node.hasLeft;
+	var rightDoor = node.hasRight;
+	var upDoor = node.hasUp;
+	var downDoor = node.hasDown;
+	var startingDoor = node.downRef.isColHead && !(node.x == 96 && node.y == 160);
+	
+	if(leftDoor && node.isRowHead)
 	{
-		for(row=0;row<rowSize;row+=1)
-		{
-		
-		}
+		global.solvedRooms=0;
+		return false;
 	}
+	if(rightDoor && node.rightRef.isRowHead)
+	{
+		global.solvedRooms=0;
+		return false;
+	}
+	if(topDoor && node.isColHead)
+	{
+		global.solvedRooms=0;
+		return false;
+	}
+	if(downDoor && !startingDoor)
+	{
+		global.solvedRooms=0;
+		return false;
+	}
+	if(leftDoor)
+	{
+		return isSolved(node.leftRef);
+	}
+	if(rightDoor)
+	{
+		return isSolved(node.rightRef);
+	}
+	if(upDoor)
+	{
+		return isSolved(node.upRef);
+	}
+	if(downDoor && !startingDoor)
+	{
+		return isSolved(node.downRef);
+	}
+	if(global.solvedRooms = 9)
+	{
+		return true;
+	}
+	return false;
+
 }

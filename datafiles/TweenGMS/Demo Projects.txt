@@ -1,0 +1,11 @@
+
+Demo projects can be downloaded from the following links:
+
+[Examples Project]
+    http://www.stephenloney.com/_/TweenGMS/105/TGMS_Examples_105.yyz
+
+[Game Project]
+    http://www.stephenloney.com/_/TweenGMS/105/TGMS_AlienOdds_105.yyz
+
+[Video Tutorial Series]
+    https://www.youtube.com/playlist?list=PLX4uKTcINfBYVRaYyWbev0rj_9XygYtPK
