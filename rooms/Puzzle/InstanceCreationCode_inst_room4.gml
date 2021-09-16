@@ -1,11 +1,4 @@
-id.leftRef = inst_tile2.id;
-id.rightRef = inst_tile1.id;
-id.upRef = inst_tile9.id;
-id.downRef = inst_tile6.id;
-
-variable = 0;
-
-if(variable == 0)
-{
-
-}
+id.leftRef = inst_room2.id;
+id.rightRef = inst_room1.id;
+id.upRef = inst_room9.id;
+id.downRef = inst_room6.id;

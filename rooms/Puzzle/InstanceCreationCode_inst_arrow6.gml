@@ -1,1 +1,1 @@
-id.head=inst_tile7.id;
+id.head=inst_room7.id;

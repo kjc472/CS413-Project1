@@ -36,13 +36,14 @@ function moveUp(arrowRef)
 
 	//Reassign row/column head to roomTwo, as it is now in the top spot
 	arrowRef.head = roomTwo;
-	
-	if(arrowRef == leftColArrowRef)
+	/*
+	if(arrowRef.head)
 	{
         topRowArrowRef.head = roomTwo;
         midRowArrowRef.head = roomThree;
         botRowArrowRef.head = roomOne;
     }
+	*/
 	if(isSolved())
 	{
         room_goto(rm_win);
