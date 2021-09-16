@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_arrow_left",
-    "path": "sprites/spr_arrow_left/spr_arrow_left.yy",
+    "name": "spr_arrow_up",
+    "path": "sprites/spr_arrow_up/spr_arrow_up.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,7 +28,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_arrow_left",
+  "name": "obj_arrrow_right_up",
   "tags": [],
   "resourceType": "GMObject",
 }

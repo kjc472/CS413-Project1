@@ -7,7 +7,6 @@
     {"id":{"name":"obj_room_dr","path":"objects/obj_room_dr/obj_room_dr.yy",},"order":2,},
     {"id":{"name":"spr_arrow_up","path":"sprites/spr_arrow_up/spr_arrow_up.yy",},"order":7,},
     {"id":{"name":"obj_arrow1","path":"objects/obj_arrow1/obj_arrow1.yy",},"order":7,},
-    {"id":{"name":"testAnimationScript","path":"scripts/testAnimationScript/testAnimationScript.yy",},"order":0,},
     {"id":{"name":"TweenFinish","path":"scripts/TweenFinish/TweenFinish.yy",},"order":1,},
     {"id":{"name":"TweenPath","path":"scripts/TweenPath/TweenPath.yy",},"order":1,},
     {"id":{"name":"TGMS_BuildProperty","path":"scripts/TGMS_BuildProperty/TGMS_BuildProperty.yy",},"order":4,},
