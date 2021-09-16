@@ -101,11 +101,11 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"rm_puzzle","path":"rooms/rm_puzzle/rm_puzzle.yy",},},
     {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
     {"roomId":{"name":"rm_instructions1","path":"rooms/rm_instructions1/rm_instructions1.yy",},},
     {"roomId":{"name":"rm_instructions2","path":"rooms/rm_instructions2/rm_instructions2.yy",},},
     {"roomId":{"name":"rm_instructions3","path":"rooms/rm_instructions3/rm_instructions3.yy",},},
-    {"roomId":{"name":"rm_puzzle","path":"rooms/rm_puzzle/rm_puzzle.yy",},},
     {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
   ],
   "Folders": [
