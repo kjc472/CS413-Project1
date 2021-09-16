@@ -1,6 +1,7 @@
-/// TweenMore(tween,target,ease,mode,delta,delay,dur,prop,start,dest,[...])
-function TweenMore() {
 
+/// TweenMore(tween,target,ease,mode,delta,delay,dur,prop,start,dest,[...])
+function TweenMore()
+{
 	/// @param tween	tween id
 	/// @param target	instance to associate with tween (id or object index)
 	/// @param ease		easing script index id (e.g. EaseInQuad, EaseLinear)
@@ -12,9 +13,7 @@ function TweenMore() {
 	/// @param start	starting value for eased property
 	/// @param dest		destination value for eased property
 	/// @param [...]	(optional) additional properties ("direction", 0, 360)
-
-	// RETURNS: tween id
-
+	/// RETURNS: tween id
 	/*
 	    Info:
 			Allows for chaining of tweens by adding a tween to be fired after the indicated tween finishes.
@@ -53,31 +52,4 @@ function TweenMore() {
 	TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween);
 	TweenDestroyWhenDone(_newTween, true); // Have tween auto-destroy
 	return _newTween;
-
-	/*
-	var _tween = argument[0];
-	var _target = argument[1];
-	var _newTween = TweenCreate(_target);
-	TweenDestroyWhenDone(_newTween, true); // Have tween auto-destroy
-
-	switch((argument_count-7) div 3)
-	{
-		case 1:  TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9]); break;
-		case 2:  TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], argument[10], argument[11], argument[12]); break;
-		case 3:  TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], argument[10], argument[11], argument[12], argument[13], argument[14], argument[15]); break;
-		case 4:  TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], argument[10], argument[11], argument[12], argument[13], argument[14], argument[15], argument[16], argument[17], argument[18]); break;
-		case 5:  TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], argument[10], argument[11], argument[12], argument[13], argument[14], argument[15], argument[16], argument[17], argument[18], argument[19], argument[20], argument[21]); break;
-		case 6:  TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], argument[10], argument[11], argument[12], argument[13], argument[14], argument[15], argument[16], argument[17], argument[18], argument[19], argument[20], argument[21], argument[22], argument[23], argument[24]); break;
-		case 7:  TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], argument[10], argument[11], argument[12], argument[13], argument[14], argument[15], argument[16], argument[17], argument[18], argument[19], argument[20], argument[21], argument[22], argument[23], argument[24], argument[25], argument[26], argument[27]); break;
-		case 8:  TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], argument[10], argument[11], argument[12], argument[13], argument[14], argument[15], argument[16], argument[17], argument[18], argument[19], argument[20], argument[21], argument[22], argument[23], argument[24], argument[25], argument[26], argument[27], argument[28], argument[29], argument[30]); break;
-		case 9:  TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], argument[10], argument[11], argument[12], argument[13], argument[14], argument[15], argument[16], argument[17], argument[18], argument[19], argument[20], argument[21], argument[22], argument[23], argument[24], argument[25], argument[26], argument[27], argument[28], argument[29], argument[30], argument[31], argument[32], argument[33]); break;
-		case 10: TweenAddCallback(_tween, TWEEN_EV_FINISH, _target, TweenPlay, _newTween, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], argument[10], argument[11], argument[12], argument[13], argument[14], argument[15], argument[16], argument[17], argument[18], argument[19], argument[20], argument[21], argument[22], argument[23], argument[24], argument[25], argument[26], argument[27], argument[28], argument[29], argument[30], argument[31], argument[32], argument[33], argument[34], argument[35], argument[36]); break;
-	}
-
-	return _newTween;
-	*/
-
-
-
-
 }

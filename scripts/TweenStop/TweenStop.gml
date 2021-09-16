@@ -1,12 +1,10 @@
-/// @description Stops the selected tween[s]
-function TweenStop(argument0) {
 
+/// @description Stops the selected tween[s]
+function TweenStop(_t)
+{
 	/// TweenStop(tween[s])
 	/// @param tween[s] tween id
-
-	// RETURNS: na
-
-	var _t = argument0;
+	/// RETURNS: na
 
 	if (is_real(_t))
 	{
@@ -40,7 +38,4 @@ function TweenStop(argument0) {
 	{
 	    TGMS_TweensExecute(_t, TweenStop);
 	}
-
-
-
 }

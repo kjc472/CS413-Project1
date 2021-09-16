@@ -1,12 +1,10 @@
-/// @description Pauses the selected tween[s]
-function TweenPause(argument0) {
 
+/// @description Pauses the selected tween[s]
+function TweenPause(_t)
+{
 	/// TweenPause(tween[s])
 	/// @param tween[s] tween id
-
-	// RETURNS: na
-
-	var _t = argument0;
+	/// RETURNS: na
 
 	if (is_real(_t))
 	{
@@ -32,8 +30,4 @@ function TweenPause(argument0) {
 	{
 	    TGMS_TweensExecute(_t, TweenPause);
 	}
-
-
-
-
 }

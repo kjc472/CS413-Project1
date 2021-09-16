@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Tween Fire",
-    "path": "folders/Scripts/TweenGMS/Tweening/Tween Fire.yy",
+    "name": " Tween Main",
+    "path": "folders/TweenGMS/User/ Tween Main.yy",
   },
   "resourceVersion": "1.0",
   "name": "TweenFire",

@@ -1,12 +1,10 @@
-/// @description Reverses the selected tween[s]
-function TweenReverse(argument0) {
 
+/// @description Reverses the selected tween[s]
+function TweenReverse(_t)
+{
 	/// TweenReverse(tween[s])
 	/// @param tween[s] tween id
-
-	// RETURNS: na
-
-	var _t = argument0;
+	/// RETURNS: na
 
 	if (is_real(_t))
 	{
@@ -27,8 +25,4 @@ function TweenReverse(argument0) {
 	{
 	    TGMS_TweensExecute(_t, TweenReverse);
 	}
-
-
-
-
 }

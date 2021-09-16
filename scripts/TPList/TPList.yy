@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Data Structures",
-    "path": "folders/Scripts/TweenGMS/Properties/Built Properties/Data Structures.yy",
+    "path": "folders/TweenGMS/User/Properties/Data Structures.yy",
   },
   "resourceVersion": "1.0",
   "name": "TPList",

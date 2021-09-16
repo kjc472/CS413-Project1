@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "TweenGMS",
-    "path": "folders/Objects/TweenGMS.yy",
+    "name": "Admin (DO NOT TOUCH)",
+    "path": "folders/TweenGMS/Admin (DO NOT TOUCH).yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_SharedTweener",

@@ -1,6 +1,7 @@
-/// @description Returns data type for the selected tween
-function TweenGet(argument0, argument1) {
 
+/// @description Returns data type for the selected tween
+function TweenGet(argument0, argument1)
+{
 	/// TweenGet(tween, dataLabel)
 	/// @param tween		tween id
 	/// @param dataLabel	data "label" string -- see script details
@@ -123,9 +124,4 @@ function TweenGet(argument0, argument1) {
 	    default: // Directly access tween index
 	        return _t[_index]
 	}
-
-
-
-
-
 }

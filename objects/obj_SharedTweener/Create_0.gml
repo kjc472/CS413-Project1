@@ -1,4 +1,4 @@
-/// @description Initialization v1.0.7
+/// @description Initialization v1.10
 /*
 	Proverbs 3:5-8
 	Trust in the Lord with all your heart and lean not on your own understanding;
@@ -6,6 +6,38 @@
 	Do not be wise in your own eyes; fear the Lord and shun evil.
 	This will bring health to your body and nourishment to your bones.
 */
+
+
+// Make sure we only have one shared tweener initiated
+initiated = false;
+if (instance_number(object_index) > 1)
+{
+	var _self = id;
+	
+	with(object_index)
+	{
+		if (_self != id)
+		{
+			if (variable_instance_exists(id, "initiated") && initiated)
+			{
+				instance_destroy(_self, false);
+				exit;
+			}
+		}
+	}
+}
+initiated = true;
+
+//-----------------------------------------------
+// Declare default global system-wide settings
+//-----------------------------------------------
+global.TGMS_IsEnabled = true;         // System's active state boolean
+global.TGMS_TimeScale = 1.0;          // Effects overall speed of how fast system plays tweens/delays
+global.TGMS_MinDeltaFPS = 10;         // The lowest framerate before delta tweens will begin to lag behind (Ideally, keep between 10-15)
+global.TGMS_UpdateInterval = 1.0;     // Sets how often (in steps) system will update (1 = default, 2 = half speed, 0.5 = double speed) DO NOT set as 0 or below!
+global.TGMS_AutoCleanIterations = 10; // Limits, each step, number of tweens passively checked by memory manager (Default:10)
+global.TGMS_EasyDelta = false;		  // Simple tweens use delta time?
+global.TGMS_TweensIncludeDeactivated = false; // Whether or not tweens associated with deactivated targets should be included with TWEEN SELECTION scripts
 
 // Global system-wide settings
 isEnabled = global.TGMS_IsEnabled;                     // System's active state flag
@@ -40,4 +72,139 @@ pRoomTweens = ds_map_create();       // Associates persistent rooms with stored 
 pRoomDelays = ds_map_create();       // Associates persistent rooms with stored tween delay lists
 eventCleaner = ds_priority_create(); // Used to clean callbacks from events
 stateChanger = ds_queue_create();	 // Used to delay change of tween state when in the update loop
+
+
+// Clean up any pre-existing environment
+with(global.TGMS_Environment)
+{
+	// Destroy tweens for persistent rooms
+	var _key = ds_map_find_first(pRoomTweens);
+		
+	repeat(ds_map_size(pRoomTweens))
+	{
+		// Delete stored delays
+		ds_queue_destroy(ds_map_find_value(pRoomDelays, _key));
+    
+		// Get stored tweens queue
+		var _queue = ds_map_find_value(pRoomTweens, _key);
+    
+		// Destroy all stored tweens in queue
+		repeat(ds_queue_size(_queue))
+		{
+			var _t = ds_queue_dequeue(_queue); // Get next tween from room's queue
+			_t[@ TWEEN.STATE] = TWEEN_STATE.DESTROYED; // Set state as destroyed
+			_t[@ TWEEN.ID] = undefined; // Nullify self reference
+        
+			// Destroy tween events if events map exists
+			if (_t[TWEEN.EVENTS] != -1)
+			{
+			    var _events = _t[TWEEN.EVENTS];        // Cache events
+			    var _key = ds_map_find_first(_events); // Find key to first event
+            
+			    // Cycle through and destroy all events
+			    repeat(ds_map_size(_events))
+			    {
+			        ds_list_destroy(_events[? _key]);       // Destroy event list
+			        _key = ds_map_find_next(_events, _key); // Find key for next event
+			    }
+            
+			    ds_map_destroy(_events); // Destroy events map
+			}
+		}
+    
+		ds_queue_destroy(_queue); // Destroy room's queue for stored tweens
+		_key = ds_map_find_next(pRoomTweens, _key);
+	}
+	/// END OF TGMS_CLEAR()
+
+	//---------------------------------------------
+	// Destroy remaining tweens
+	//---------------------------------------------
+	var _tweens = tweens;
+	var _tIndex = -1;
+	repeat(ds_list_size(_tweens))
+	{   
+		var _t = _tweens[| ++_tIndex];             // Get tween and increment iterator
+		_t[@ TWEEN.STATE] = TWEEN_STATE.DESTROYED; // Set state as destroyed
+		_t[@ TWEEN.ID] = undefined;                // Nullify self reference
+    
+		// Destroy tween events if events map exists
+		if (_t[TWEEN.EVENTS] != -1)
+		{
+		    var _events = _t[TWEEN.EVENTS]; // Cache events
+        
+		    // Iterate through events
+		    repeat(ds_map_size(_events))
+		    {
+		        ds_list_destroy(_events[? ds_map_find_first(_events)]); // Destroy event list
+		        ds_map_delete(_events, ds_map_find_first(_events));     // Delete event key   
+		    }
+        
+		    // Destroy events map and invalidate tween's reference
+		    ds_map_destroy(_events);
+		    _t[@ TWEEN.EVENTS] = -1; // :: Do I need this?
+		}
+	}
+
+	//---------------------------------------
+	// Destroy Data Structures
+	//---------------------------------------
+	ds_list_destroy(tweens);
+	ds_list_destroy(delayedTweens);
+	ds_map_destroy(simpleTweens);
+	ds_map_destroy(pRoomTweens);
+	ds_map_destroy(pRoomDelays);
+	ds_priority_destroy(eventCleaner);
+	ds_queue_destroy(stateChanger);
+}
+	
+// Clear Persistent Data Structures
+ds_map_clear(global.TGMS_MAP_TWEEN);
+ds_stack_clear(global.TGMS_TweensStack);
+
+global.TGMS_INDEX_TWEEN = 1; // Reset the tween id index
+global.TGMS_SharedTweener = id; // Set self as the shared tweener
+
+// Set current environment variables for later cleaning
+global.TGMS_Environment = {};
+global.TGMS_Environment.tweens = tweens;
+global.TGMS_Environment.delayedTweens = delayedTweens;
+global.TGMS_Environment.simpleTweens = simpleTweens;
+global.TGMS_Environment.pRoomTweens = pRoomTweens;
+global.TGMS_Environment.pRoomDelays = pRoomDelays;
+global.TGMS_Environment.eventCleaner = eventCleaner;
+global.TGMS_Environment.stateChanger = stateChanger;
+
+//---------------------------
+// Create Default Tween
+//---------------------------
+global.TGMS_TweenDefault[TWEEN.ID] = 0;
+global.TGMS_TweenDefault[TWEEN.TARGET] = noone;
+global.TGMS_TweenDefault[TWEEN.EASE] = EaseLinear;
+global.TGMS_TweenDefault[TWEEN.TIME] = 0;
+global.TGMS_TweenDefault[TWEEN.START] = 0;
+global.TGMS_TweenDefault[TWEEN.CHANGE] = 1;
+global.TGMS_TweenDefault[TWEEN.DURATION] = 1;
+global.TGMS_TweenDefault[TWEEN.PROPERTY] = TGMS_NULL__;
+global.TGMS_TweenDefault[TWEEN.PROPERTY_RAW] = 0;
+global.TGMS_TweenDefault[TWEEN.VARIABLE] = "";
+global.TGMS_TweenDefault[TWEEN.STATE] = TWEEN_STATE.STOPPED;
+global.TGMS_TweenDefault[TWEEN.TIME_SCALE] = 1;
+global.TGMS_TweenDefault[TWEEN.DELTA] = false;
+global.TGMS_TweenDefault[TWEEN.GROUP] = 0;
+global.TGMS_TweenDefault[TWEEN.EVENTS] = -1;
+global.TGMS_TweenDefault[TWEEN.DESTROY] = 1;
+global.TGMS_TweenDefault[TWEEN.DIRECTION] = 1;
+global.TGMS_TweenDefault[TWEEN.MODE] = TWEEN_MODE_ONCE;
+global.TGMS_TweenDefault[TWEEN.DATA] = 0;
+global.TGMS_TweenDefault[TWEEN.DELAY] = -1;
+global.TGMS_TweenDefault[TWEEN.DELAY_START] = 0;
+
+// Assign default tween as first in global id map
+global.TGMS_MAP_TWEEN[? 1] = global.TGMS_TweenDefault;
+
+// Assign [all] as shortcut for affecting all tweens with tween calls
+global.TGMS_MAP_TWEEN[? all] = "10";
+
+
 

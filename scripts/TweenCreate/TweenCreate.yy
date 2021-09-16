@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Tween Create",
-    "path": "folders/Scripts/TweenGMS/Tweening/Tween Create.yy",
+    "name": " Tween Main",
+    "path": "folders/TweenGMS/User/ Tween Main.yy",
   },
   "resourceVersion": "1.0",
   "name": "TweenCreate",

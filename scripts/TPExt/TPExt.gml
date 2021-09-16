@@ -1,8 +1,8 @@
+
 /// TPExt(property,arg0,...)
-function TPExt() {
-
+function TPExt()
+{
 	/// @description Prepares an extended property script with custom arguments
-
 	/// @param property		property script
 	/// @param arg0			argument to pass to extended property scripts
 	/// @param ...			additional arguments to pass to extended property scripts
@@ -29,9 +29,4 @@ function TPExt() {
 	    _return[1] = argument[1];
 	    return _return;
 	}
-
-
-
-
-
 }

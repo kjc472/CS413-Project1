@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "User Events",
-    "path": "folders/Scripts/TweenGMS/Properties/Built Properties/User Events.yy",
+    "name": "Other",
+    "path": "folders/TweenGMS/User/Properties/Other.yy",
   },
   "resourceVersion": "1.0",
   "name": "TPUser",

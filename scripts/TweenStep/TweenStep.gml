@@ -1,6 +1,7 @@
-/// @description Steps a tween forward/backward by given amount
-function TweenStep(argument0, argument1) {
 
+/// @description Steps a tween forward/backward by given amount
+function TweenStep(argument0, argument1)
+{
 	/// TweenStep(tween[s],amount)
 	/// @param tween[s]		tween id[s]
 	/// @param amount		relative amount/direction to step (1.0 = forward | -1.0 = backward)
@@ -192,8 +193,4 @@ function TweenStep(argument0, argument1) {
 	{
 	    TGMS_TweensExecute(_t, TweenStep, _amount);
 	}
-
-
-
-
 }

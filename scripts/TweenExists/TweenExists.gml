@@ -1,11 +1,10 @@
-/// @description Checks if tween exists
-function TweenExists(argument0) {
 
+/// @description Checks if tween exists
+function TweenExists(argument0)
+{
 	/// TweenExists(tween)
 	/// @param tween	tween id
-
 	/// return: bool
-
 	/*      
 	    Example:
 	        if (TweenExists(tween))
@@ -55,8 +54,4 @@ function TweenExists(argument0) {
 	    instance_deactivate_object(_target);
 	    return true;
 	}
-
-
-
-
 }

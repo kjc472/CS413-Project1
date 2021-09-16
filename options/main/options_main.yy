@@ -1,5 +1,5 @@
 {
-  "option_gameguid": "45ddcbbb-acdb-4f2c-a9e0-670492ef4981",
+  "option_gameguid": "c291dda1-1ab7-45ae-b107-a1d6ec6c0b83",
   "option_gameid": "0",
   "option_game_speed": 60,
   "option_mips_for_3d_textures": false,

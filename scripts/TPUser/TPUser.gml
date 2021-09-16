@@ -1,6 +1,7 @@
-/// TPUser(event,[...])
-function TPUser() {
 
+/// TPUser(event,[...])
+function TPUser()
+{
 	/// @param event      User event to use as a property
 	/// @param [...]      (Optional) Extra data to pass to user event. Accessible via TWEEN_USER_DATA in user event
 	/*
@@ -65,7 +66,46 @@ function TPUser() {
 	}
 
 	return _return;
-
-
-
 }
+
+
+/// __ext_PropUser(event,target)
+function __ext_PropUser(argument0, argument1)
+{
+	TWEEN_USER_TARGET = argument1;
+	TWEEN_USER_GET = 1;
+
+	if (is_real(argument0))
+	{
+	    event_perform_object(argument1.object_index, ev_other, argument0);
+	}
+	else
+	{
+	    TWEEN_USER_DATA = argument0[1];
+	    event_perform_object(argument1.object_index, ev_other, argument0[0]);
+	}
+
+	var _return = TWEEN_USER_GET;
+	TWEEN_USER_GET = 0;
+	return _return;
+}
+
+
+/// ext_PropUserAdvanced__(value,ev_user,target)
+function ext_PropUser__(argument0, argument1, argument2)
+{
+	TWEEN_USER_VALUE = argument0;
+	TWEEN_USER_TARGET = argument2;
+
+	if (is_real(argument1))
+	{
+	    event_perform_object(argument2.object_index, ev_other, argument1);
+	}
+	else
+	{
+	    TWEEN_USER_DATA = argument1[1];
+	    event_perform_object(argument2.object_index, ev_other, argument1[0]);
+	}
+}
+
+

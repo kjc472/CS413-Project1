@@ -74,7 +74,7 @@ if (isEnabled)
                 {
                     if (_t[TWEEN.DELTA]) var _time = _t[TWEEN.TIME] + _t[TWEEN.TIME_SCALE] * _timeScaleDelta;   
                     else                 var _time = _t[TWEEN.TIME] + _t[TWEEN.TIME_SCALE] * _timeScale;
-                    
+
                     var _duration = _t[TWEEN.DURATION]; // Cache duration
                     
                     // IF tween is within start/destination
@@ -315,7 +315,7 @@ repeat(_cleanIterations)
         else // Handle tween destruction...
         {
             ds_list_delete(_tweens, autoCleanIndex); // Remove tween from tweens list
-            
+			
             // Invalidate tween handle
             if (ds_map_exists(global.TGMS_MAP_TWEEN, _t[TWEEN.ID]))
             {

@@ -1,12 +1,10 @@
-/// @description Resumes the selected tween[s]
-function TweenResume(argument0) {
 
+/// @description Resumes the selected tween[s]
+function TweenResume(_t)
+{
 	/// TweenResume(tween[s])
 	/// @param tween[s] tween id
-
-	// RETURNS: na
-
-	var _t = argument0;
+	/// RETURNS: na
 
 	if (is_real(_t))
 	{
@@ -34,7 +32,4 @@ function TweenResume(argument0) {
 	{
 	    TGMS_TweensExecute(_t, TweenResume);
 	}
-
-
-
 }

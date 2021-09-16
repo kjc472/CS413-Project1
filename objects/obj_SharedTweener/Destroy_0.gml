@@ -76,3 +76,6 @@ ds_map_destroy(pRoomTweens);
 ds_map_destroy(pRoomDelays);
 ds_priority_destroy(eventCleaner);
 ds_queue_destroy(stateChanger);
+
+global.TGMS_Environment = noone;
+

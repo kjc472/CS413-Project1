@@ -1,12 +1,12 @@
-/// @ description Sets the data type for the selected tween[s]
-function TweenSet() {
 
+/// @ description Sets the data type for the selected tween[s]
+function TweenSet()
+{
 	/// TweenSet(tween[s], dataLabel, value, [...])
 	/// @param tween[s]		tween id[s]
 	/// @param dataLabel	data "label" string
 	/// @param value		value to apply to set data type
 	/// @param [...]		(optional) additional values for modifying multi-property tweens
-
 	/*
 	    Supported Data Labels:
 	        "group"         -- Group which tween belongs to
@@ -243,11 +243,4 @@ function TweenSet() {
 	        case 8: TGMS_TweensExecute(_t, TweenSet, _index, argument[2], argument[3], argument[4], argument[5], argument[6], argument[7]); break;
 	    }
 	}
-
-
-
-
-
-
-
 }
