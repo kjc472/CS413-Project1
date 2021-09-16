@@ -7,7 +7,7 @@ function isSolved(node)
 	var rightDoor = node.hasRight;
 	var upDoor = node.hasUp;
 	var downDoor = node.hasDown;
-	var startingDoor = node.x == 96 && node.y == 160;
+	var startingDoor = (node.x == 96 && node.y == 160);
 	
 	if(leftDoor && node.isRowHead)
 	{
