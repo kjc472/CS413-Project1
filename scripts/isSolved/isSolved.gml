@@ -1,7 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function isSolved(node)
+function isSolved()
 {
+	node = inst_room8.id;
 	global.solvedRooms+=1;	
 	var leftDoor = node.hasLeft;
 	var rightDoor = node.hasRight;
