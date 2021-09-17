@@ -1,8 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function isSolved()
+function isSolved(node)
 {
-	node = inst_room8.id;
 	global.solvedRooms+=1;	
 	var leftDoor = node.hasLeft;
 	var rightDoor = node.hasRight;
@@ -25,7 +24,7 @@ function isSolved()
 		global.solvedRooms=0;
 		return;
 	}
-	if(downDoor && !startingDoor)
+	if(downDoor && !startingDoor && node.y == 160)
 	{
 		global.solvedRooms=0;
 		return;
