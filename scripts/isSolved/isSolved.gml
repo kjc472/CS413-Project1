@@ -45,10 +45,11 @@ function isSolved(node)
 	{
 		return isSolved(node.downRef);
 	}
-	if(global.solvedRooms = 9)
+	if(global.solvedRooms == 9)
 	{
 		return true;
 	}
+	global.solvedRooms = 0;
 	return false;
 
 }

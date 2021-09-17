@@ -6,42 +6,27 @@ function moveSide(arrowRef)
 	var roomOne = arrowRef.head;
 	var roomTwo = roomOne.rightRef;
 	var roomThree = roomTwo.rightRef;
-	
-	var roomOneX = roomOne.x;
-	var roomTwoX = roomTwo.x;
-	var roomThreeX = roomThree.x;
-	
-	
-	var roomOneLeft = roomOne.leftRef;
-	var roomOneRight = roomOne.rightRef;
-	var roomTwoLeft = roomTwo.leftRef;
-	var roomTwoRight = roomTwo.rightRef;
-	var roomThreeLeft = roomThree.leftRef;
-	var roomThreeRight = roomThree.rightRef;
-
-	//Move each room to new position
-	roomOne.x = roomThreeX;
-	roomOne.isRowHead = 0;
-	roomThree.x = roomTwoX;
-	roomTwo.x = roomOneX;
-    roomTwo.isRowHead = 1;
+		
+	var roomOneUp = roomOne.upRef;
+	var roomOneDown = roomOne.downRef;
+	var roomTwoUp = roomTwo.upRef;
+	var roomTwoDown = roomTwo.downRef;
+	var roomThreeUp = roomThree.upRef;
+	var roomThreeDown = roomThree.downRef;
 	
 	//Reassign adjacencies
-	roomOne.leftRef = roomThreeLeft;
-	roomOne.rightRef = roomThreeRight;
-	roomThree.leftRef = roomTwoLeft;
-	roomThree.rightRef = roomTwoRight;
-	roomTwo.leftRef = roomOneLeft;
-	roomTwo.rightRef = roomOneRight;
+	roomOne.upRef = roomThreeUp;
+	roomOne.downRef = roomThreeDown;
+	roomThree.upRef = roomTwoUp;
+	roomThree.downRef = roomTwoDown;
+	roomTwo.upRef = roomOneUp;
+	roomTwo.downRef = roomOneDown;
 
 	//Reassign row/column head to roomTwo, as it is now in the top spot
 	arrowRef.head = roomTwo;
-
-	if(isSolved(arrowRef.head))
+	isSolved(arrowRef.head);
+	if(global.solvedRooms == 9)
 	{
         room_goto(rm_win);
     }
-
-
-
 }

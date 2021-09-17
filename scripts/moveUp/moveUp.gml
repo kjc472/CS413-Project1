@@ -6,11 +6,7 @@ function moveUp(arrowRef)
 	var roomOne = arrowRef.head;
 	var roomTwo = roomOne.downRef;
 	var roomThree = roomTwo.downRef;
-	
-	var roomOneY = roomOne.y;
-	var roomTwoY = roomTwo.y;
-	var roomThreeY = roomThree.y;
-	
+
 	
 	var roomOneLeft = roomOne.leftRef;
 	var roomOneRight = roomOne.rightRef;
@@ -19,13 +15,6 @@ function moveUp(arrowRef)
 	var roomThreeLeft = roomThree.leftRef;
 	var roomThreeRight = roomThree.rightRef;
 
-	//Move each room to new position
-	roomOne.y = roomThreeY;
-	roomOne.isColHead = 0;
-	roomThree.y = roomTwoY;
-	roomTwo.y = roomOneY;
-    roomTwo.isColHead = 1;
-	
 	//Reassign adjacencies
 	roomOne.leftRef = roomThreeLeft;
 	roomOne.rightRef = roomThreeRight;
@@ -36,8 +25,8 @@ function moveUp(arrowRef)
 
 	//Reassign row/column head to roomTwo, as it is now in the top spot
 	arrowRef.head = roomTwo;
-
-	if(isSolved(arrowRef.head))
+	isSolved(arrowRef.head);
+	if(global.solvedRooms == 9)
 	{
         room_goto(rm_win);
     }
