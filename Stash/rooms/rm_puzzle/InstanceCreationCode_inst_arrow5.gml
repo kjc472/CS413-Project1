@@ -1,0 +1,1 @@
+id.head=inst_room4.id;
