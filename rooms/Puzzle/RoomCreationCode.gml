@@ -1,0 +1,1 @@
+global.solvedRooms = 0;
