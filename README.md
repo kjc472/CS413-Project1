@@ -19,7 +19,7 @@ to it in between rooms.
 The movement animations of tiles are not always consistent, with some occasionally layering over one another. Additionally, rapid 
 clicks by the player will cause the tiles to be derailed.
 
-isSolved is known to occasionally produce a bug which gives the player an early victory, or sometimes fails to correctly detect a solved puzzle
+isSolved sometimes fails to correctly detect a solved puzzle.
 
 ## Credits
 
