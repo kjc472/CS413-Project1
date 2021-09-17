@@ -25,8 +25,5 @@ function moveSide(arrowRef)
 	//Reassign row/column head to roomTwo, as it is now in the top spot
 	arrowRef.head = roomTwo;
 	isSolved(arrowRef.head);
-	if(global.solvedRooms == 9)
-	{
-        room_goto(rm_win);
-    }
+
 }

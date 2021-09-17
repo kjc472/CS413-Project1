@@ -12,44 +12,42 @@ function isSolved(node)
 	if(leftDoor && node.isRowHead)
 	{
 		global.solvedRooms=0;
-		return false;
+		return;
 	}
 	if(rightDoor && node.rightRef.isRowHead)
 	{
 		global.solvedRooms=0;
-		return false;
+		return;
 	}
 	if(upDoor && node.isColHead)
 	{
 		global.solvedRooms=0;
-		return false;
+		return;
 	}
 	if(downDoor && !startingDoor)
 	{
 		global.solvedRooms=0;
-		return false;
+		return;
 	}
 	if(leftDoor)
 	{
-		return isSolved(node.leftRef);
+		isSolved(node.leftRef);
 	}
 	if(rightDoor)
 	{
-		return isSolved(node.rightRef);
+		isSolved(node.rightRef);
 	}
 	if(upDoor)
 	{
-		return isSolved(node.upRef);
+		isSolved(node.upRef);
 	}
 	if(downDoor && !startingDoor)
 	{
-		return isSolved(node.downRef);
+		isSolved(node.downRef);
 	}
 	if(global.solvedRooms == 9)
 	{
-		return true;
-	}
-	global.solvedRooms = 0;
-	return false;
+        room_goto(rm_win);
+    }
 
 }
