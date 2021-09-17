@@ -89,7 +89,7 @@
     {"id":{"name":"obj_arrow3","path":"objects/obj_arrow3/obj_arrow3.yy",},"order":9,},
     {"id":{"name":"spr_arrow_right","path":"sprites/spr_arrow_right/spr_arrow_right.yy",},"order":8,},
     {"id":{"name":"TweenMore","path":"scripts/TweenMore/TweenMore.yy",},"order":4,},
-    {"id":{"name":"Puzzle","path":"rooms/Puzzle/Puzzle.yy",},"order":0,},
+    {"id":{"name":"rm_puzzle","path":"rooms/rm_puzzle/rm_puzzle.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Main","path":"options/main/options_main.yy",},
@@ -103,12 +103,12 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"Puzzle","path":"rooms/Puzzle/Puzzle.yy",},},
     {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
-    {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
     {"roomId":{"name":"rm_instructions1","path":"rooms/rm_instructions1/rm_instructions1.yy",},},
     {"roomId":{"name":"rm_instructions2","path":"rooms/rm_instructions2/rm_instructions2.yy",},},
     {"roomId":{"name":"rm_instructions3","path":"rooms/rm_instructions3/rm_instructions3.yy",},},
+    {"roomId":{"name":"rm_puzzle","path":"rooms/rm_puzzle/rm_puzzle.yy",},},
+    {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
