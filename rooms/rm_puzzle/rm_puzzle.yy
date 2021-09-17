@@ -20,6 +20,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_arrow5","path":"objects/obj_arrow5/obj_arrow5.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":232.0,"y":119.0,"resourceVersion":"1.0","name":"inst_arrow5","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_arrow4","path":"objects/obj_arrow4/obj_arrow4.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":232.0,"y":55.0,"resourceVersion":"1.0","name":"inst_arrow4","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_arrow6","path":"objects/obj_arrow6/obj_arrow6.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":232.0,"y":183.0,"resourceVersion":"1.0","name":"inst_arrow6","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_reset","path":"objects/obj_reset/obj_reset.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":48.0,"y":224.0,"resourceVersion":"1.0","name":"inst_502692FB","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"gui","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_exterior","path":"objects/obj_exterior/obj_exterior.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_exterior","tags":[],"resourceType":"GMRInstance",},
@@ -71,6 +72,7 @@
     {"name":"inst_7CD1C925","path":"rooms/rm_puzzle/rm_puzzle.yy",},
     {"name":"inst_4A585C03","path":"rooms/rm_puzzle/rm_puzzle.yy",},
     {"name":"inst_exterior","path":"rooms/rm_puzzle/rm_puzzle.yy",},
+    {"name":"inst_502692FB","path":"rooms/rm_puzzle/rm_puzzle.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

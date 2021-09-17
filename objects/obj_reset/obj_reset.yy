@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_win",
-    "path": "sprites/spr_win/spr_win.yy",
+    "name": "spr_reset",
+    "path": "sprites/spr_reset/spr_reset.yy",
   },
   "solid": false,
   "visible": true,
@@ -30,7 +30,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_win",
+  "name": "obj_reset",
   "tags": [],
   "resourceType": "GMObject",
 }
